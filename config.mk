@@ -35,3 +35,7 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(HW_NOTHING_PATH)/sepolicy/glyph/HieroGlyph
 endif
 
 endif
+
+ifneq ($(filter android.hardware.vibrator.service.nothing-rt_ics, $(PRODUCT_PACKAGES)),)
+$(call soong_config_set_bool, nothing_vibrator, enable_deps, true)
+endif
